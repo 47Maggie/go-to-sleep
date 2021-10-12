@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+//����һ���ṹ��������ʾ�����Ľ������ 
+struct node
+{
+	int data;
+	struct node *next;
+ } ;
+
+int main()
+{
+	struct node *head,*p,*q,*t;
+	int i,n,a,b;
+	scanf("%d",&n);
+	head=NULL; //ͷָ���ʼΪ�� 
+	for(i=1;i<=n;i++) //������
+	{
+		scanf("%d ",&a); 
+		//��̬����һ���ռ䣬��Ž��
+		p=(struct node *)malloc(sizeof(struct node));
+		p->data=a;//���ݴ洢����ǰ���
+		p->next=NULL;//���õ�ǰ���ĺ��ָ��ָ���Ҳ���ǵ�ǰ������һ�����Ϊ��
+		if(head=NULL)
+		    head=p;//������ǵ�һ�������Ľ�㣬ͷָ���ָ��������
+		else
+		    q->next=p;//������ǣ���һ�����ĺ��ָ��ָ��ǰ���
+			q=p;//ָ��qҲָ��ǰ��� 
+	 } 
+	 
+	 scanf("%d",&b);//Ҫ�������
+	 t=head;//������ͷ��ʼ��������ΪҪ����
+	 while(t!=NULL)//û�е���β��һֱѭ��ִ��
+	 {
+	 	if(t->next->data>b)//���������һ������ֵ���ڲ�����ʱ
+		 {
+		 	p=(struct node *)malloc(sizeof(struct node));//�ٶ�̬����һ���ռ䡣����½�㣬��Ϊ������ֵ
+			 p->data=b;
+			 p->next=t->next;//ʹ����ֵ���½��ĺ��ָ����浱ǰ��㣨�������С�ģ��ĺ��ָ����ָ���Ǹ���㣬��ʵ���Ǵ���
+			 t->next=p;//��ǰ��㣨�������С�ģ��ĺ��ָ��ָ�������������������
+			 break;//����������˳�ѭ������break������ 
+		  } 
+		  t=t->next;//������һ����㣨·Ҫ���꣩ 
+	  } 
+	  
+	  //����������������
+	  t=head;
+	  while(t!=NULL)
+	  {
+	  	printf("%d ",t->data);
+	  	t=t->next;//������һ����� 
+	   } 
+	   
+	   return 0; 
+}
